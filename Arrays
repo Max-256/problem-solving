@@ -255,7 +255,6 @@ class Solution {
 class Solution {
     public List<Integer> findDisappearedNumbers(int[] nums) {
         int n = nums.length;
-        
         boolean [] seen = new boolean[n];
         
         for(int num : nums){
