@@ -228,3 +228,24 @@ class Solution {
         return count;
     }
 }
+
+//find third max number
+
+class Solution {
+    public int thirdMax(int[] nums) {
+        
+        Set<Integer> set = new HashSet<Integer>();
+        
+        for(int n : nums){
+            set.add(n);
+            if(set.size() > 3){
+                set.remove(Collections.min(set));
+            }
+        }
+        
+        List<Integer> list = new ArrayList<Integer>(set);
+        Collections.sort(list, Collections.reverseOrder());
+        
+        return list.size() >= 3 ? list.get(2) : list.get(0);
+    }
+}
